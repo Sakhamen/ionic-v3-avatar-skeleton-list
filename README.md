@@ -1,4 +1,4 @@
-# Ionic 3 Avatar Skeleton List Loader
+# Ionic 3 Avatar Skeleton List Component
 
 Rest API Used - https://reqres.in/
 
