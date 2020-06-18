@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Ionic v3 Skeleton
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Pull to re-load data -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Skeleton List -->
+  <ion-list *ngIf="isLoading">
+    <custom-skeleton></custom-skeleton>
+  </ion-list>
+
+  <!-- User List -->
+  <ion-list *ngIf="!isLoading && users?.length">
+    <ion-list-header>
+      Recent Users
+    </ion-list-header>
+
+    <ion-item *ngFor="let user of users">
+      <ion-avatar item-start>
+        <img src="{{user.avatar}}">
+      </ion-avatar>
+      <h2>{{user.first_name}} {{user.last_name}}</h2>
+      <p>{{user.email}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Sakhamen</ion-title>
+  </ion-toolbar>
+</ion-footer>
